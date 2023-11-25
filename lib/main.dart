@@ -1,14 +1,28 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
+    String email;
+    String subject;
+    String body;
+    Uri mail;
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.teal,
@@ -47,53 +61,77 @@ class MyApp extends StatelessWidget {
                 color: Colors.teal[100],
               ),
             ),
-            Card(
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              child: ListTile(
-                leading: const Icon(
-                  Icons.phone,
-                  color: Colors.teal,
-                ),
-                title: Text(
-                  "+255 784 399 510",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'SourceSans3-VariableFont_wght',
-                    color: Colors.teal[900],
+            TextButton(
+              onPressed: () async => {
+                // UrlLauncher.launch('0784399510')
+              },
+
+              child: Card(
+                margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: const Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    "+255 784 399 510",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'SourceSans3-VariableFont_wght',
+                      color: Colors.teal[900],
+                    ),
                   ),
                 ),
               ),
             ),
-            Card(
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              child: ListTile(
-                leading: const Icon(
-                  Icons.email,
-                  color: Colors.teal,
-                ),
-                title: Text(
-                  'arnoldmosha60@gmail.com',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'SourceSans3-VariableFont_wght',
-                    color: Colors.teal[900],
+            TextButton(
+              onPressed: () async => {
+                email = Uri.encodeComponent("arnoldmosha60@gmail.com"),
+                subject = Uri.encodeComponent("Hello Mosha"),
+                body = Uri.encodeComponent("Hi! I'm Flutter Developer"),
+                mail = Uri.parse("mailto:$email?subject=$subject&body=$body"),
+                if (await launchUrl(mail)) {
+                  //email app opened
+                }else{
+                  //email app is not opened
+                }
+              },
+              child: Card(
+                margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: const Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'arnoldmosha60@gmail.com',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'SourceSans3-VariableFont_wght',
+                      color: Colors.teal[900],
+                    ),
                   ),
                 ),
               ),
             ),
-            Card(
-              margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              child: ListTile(
-                leading: const Icon(
-                  Icons.location_on,
-                  color: Colors.teal,
-                ),
-                title: Text(
-                  'kimara, dar-es-salaam',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'SourceSans3-VariableFont_wght',
-                    color: Colors.teal[900],
+            TextButton(
+              onPressed: () {
+                // LocationService();
+              },
+              child: Card(
+                margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: const Icon(
+                    Icons.location_on,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'kimara, dar-es-salaam',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'SourceSans3-VariableFont_wght',
+                      color: Colors.teal[900],
+                    ),
                   ),
                 ),
               ),
@@ -104,3 +142,36 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// class LocationService {
+//   Location location = Location();
+//
+//   Future<bool> requestPermission() async {
+//     final permission = await location.requestPermission();
+//     return permission == PermissionStatus.granted;
+//   }
+//
+//   Future<LocationData> getCurrentLocation() async {
+//     final serviceEnabled = await location.serviceEnabled();
+//     if (!serviceEnabled) {
+//       final result = location.requestService;
+//       if (result == true) {
+//         if (kDebugMode) {
+//           print('Service has been enabled');
+//         }
+//       } else {
+//         throw Exception('GPS service not enabled');
+//       }
+//     }
+//
+//     final locationData = await location.getLocation();
+//     return locationData;
+
+// class UrlLauncher {
+//
+//   static launch(String s) {
+//     UrlLauncher.launch("tel://$s");
+//   }
+// }
+//   }
+// }
