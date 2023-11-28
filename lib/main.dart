@@ -1,7 +1,9 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_dialpad/flutter_dialpad.dart';
 
 
 void main() {
@@ -17,6 +19,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  void openPhone(String phone) async {
+    Uri phoneno = Uri.parse('tel:$phone');
+    if(await canLaunchUrl(phoneno)){
+      await launchUrl(phoneno);
+    }else {
+      if (kDebugMode) {
+        print('Cannot make call');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     String email;
@@ -63,9 +77,8 @@ class _MyAppState extends State<MyApp> {
             ),
             TextButton(
               onPressed: () async => {
-                // UrlLauncher.launch('0784399510')
+                openPhone('0784399510'),
               },
-
               child: Card(
                 margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                 child: ListTile(

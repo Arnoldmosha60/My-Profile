@@ -16,6 +16,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   url_launcher: ^6.2.1
+  flutter_dialpad: ^1.0.5
 
 
 dev_dependencies:

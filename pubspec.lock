@@ -62,6 +62,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_dialpad:
+    dependency: "direct main"
+    description:
+      name: flutter_dialpad
+      sha256: "118d9a87eee9af79f05c5a023eea45bcb0ae02e6516b77d5baa34cf4411064c0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
+  flutter_dtmf:
+    dependency: transitive
+    description:
+      name: flutter_dtmf
+      sha256: "0064a8d2f0d06b4b8e7cea1f78017fc2a70d2d59c004d8c2b837ac4d222bb95a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.2"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -70,6 +86,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+  flutter_masked_text2:
+    dependency: transitive
+    description:
+      name: flutter_masked_text2
+      sha256: "5ccf6f1f8b7b7a8025e3fbaea48bff0aa7e7e9512c723e26138a0b24f31ca4d8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.9.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
