@@ -30,12 +30,11 @@ AWS
 💼 Portfolio
 Here are some of my notable projects:
 
-Project Name 1: A brief description of the project.
-Project Name 2: A brief description of the project.
-Project Name 3: A brief description of the project.
+https://github.com/Arnoldmosha60/My-Profile: My Profile.
+https://github.com/Arnoldmosha60/Portfolio: My portfolio.
 Explore my projects on GitHub.
 
 📫 Contact Me
 Email: arnoldmosha60@gmail.com
-LinkedIn: linkedin.com/in/arnoldmosha
+LinkedIn: https://www.linkedin.com/in/arnold-mosha-102631323/
 GitHub: https://github.com/Arnoldmosha60
