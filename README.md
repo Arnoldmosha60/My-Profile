@@ -1,8 +1,8 @@
-#Arnold Mosha - My Profile Project
+# Arnold Mosha - My Profile Project
 
 Welcome to my profile project! This repository is a comprehensive representation of Arnold Mosha, showcasing my skills, achievements, and passion for technology.
 
-##About Me
+## About Me
 Hello! I'm Arnold Mosha, a dedicated and enthusiastic software developer with a deep interest in building impactful and innovative solutions. I enjoy working on projects that combine creativity, problem-solving, and technology to make a difference.
 
 🏆 Achievements
